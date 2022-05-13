@@ -21,7 +21,11 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@open-weather/core/*": ["./src/app/core/*"],
+      "@open-weather/forecast/*": ["./src/app/forecast/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
