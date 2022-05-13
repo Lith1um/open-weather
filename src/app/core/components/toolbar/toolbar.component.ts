@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ow-toolbar',
@@ -8,15 +8,12 @@ import { Component, Inject } from '@angular/core';
 })
 export class ToolbarComponent {
 
-  title = 'OpenWeather';
-
+  @Input()
   darkMode = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  @Output()
+  darkModeToggled = new EventEmitter<void>();
 
-  toggleDarkMode(): void {
-    this.darkMode = !this.darkMode;
-    this.document.body.classList.toggle('dark-mode');
-  }
+  title = 'OpenWeather';
 
 }

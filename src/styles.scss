@@ -6,9 +6,20 @@ html, body {
 }
 
 body {
-  --text-color: #24292f;
+  min-width: 300px;
+  // TODO: remove
+  // breakpoints variables
+  --sm-size: 576px;
+  --md-size: 768px;
+  --lg-size: 992px;
+
+  // style variables
+  --font-size: 14px;
+  --primary-text-color: #24292f;
+  --secondary-text-color: #b4b4b4;
   --bg-color: #ffffff;
 
+  font-size: var(--font-size);
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -16,4 +27,8 @@ body {
 body.dark-mode {
   --text-color: #c9d1d9;
   --bg-color: #0D1117;
+}
+
+p {
+  margin-top: 0;
 }
