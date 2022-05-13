@@ -23,8 +23,8 @@
       "dom"
     ],
     "paths": {
-      "@open-weather/core/*": ["./src/app/core/*"],
-      "@open-weather/forecast/*": ["./src/app/forecast/*"]
+      "@core/*": ["./src/app/core/*"],
+      "@forecast/*": ["./src/app/forecast/*"]
     }
   },
   "angularCompilerOptions": {

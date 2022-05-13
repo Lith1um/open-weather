@@ -1,8 +1,14 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 
+import { ToolbarComponent } from '@core/components';
+
 @NgModule({
-  declarations: [],
-  imports: []
+  declarations: [
+    ToolbarComponent
+  ],
+  exports: [
+    ToolbarComponent
+  ]
 })
 export class CoreModule {
 

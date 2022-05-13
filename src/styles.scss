@@ -1,4 +1,19 @@
 html, body {
   padding: 0;
   margin: 0;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  --text-color: #24292f;
+  --bg-color: #ffffff;
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+body.dark-mode {
+  --text-color: #c9d1d9;
+  --bg-color: #0D1117;
 }

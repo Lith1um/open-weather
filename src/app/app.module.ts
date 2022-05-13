@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ForecastModule } from '@open-weather/forecast/forecast.module';
-import { CoreModule } from '@open-weather/core/core.module';
+import { ForecastModule } from '@forecast/forecast.module';
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
   declarations: [
