@@ -7,6 +7,8 @@ import { ForecastService } from '@forecast/services';
 })
 export class ForecastGridComponent implements OnInit {
 
+  error: string;
+
   constructor(private forecastService: ForecastService) {}
 
   ngOnInit(): void {
