@@ -24,7 +24,8 @@
     ],
     "paths": {
       "@core/*": ["./src/app/core/*"],
-      "@forecast/*": ["./src/app/forecast/*"]
+      "@forecast/*": ["./src/app/forecast/*"],
+      "@shared/*": ["./src/app/shared/*"],
     }
   },
   "angularCompilerOptions": {

@@ -1,10 +1,12 @@
 <header class="toolbar">
-  <img class="toolbar__logo" src="/assets/images/logo.png" alt="logo image"/>
-  <div class="toolbar__title">
-    <h2>{{ title }}</h2>
-    <span>By Alex Rayner</span>
+  <div class="toolbar__content">
+    <img class="toolbar__logo" src="/assets/images/logo.png" alt="logo image"/>
+    <div class="toolbar__title">
+      <h2>{{ title }}</h2>
+      <span>By Alex Rayner</span>
+    </div>
+    <i class="toolbar__dark-mode material-icons" (click)="darkModeToggled.emit()">
+      {{ darkMode ? 'dark_mode' : 'light_mode' }}
+    </i>
   </div>
-  <i class="toolbar__dark-mode material-icons" (click)="darkModeToggled.emit()">
-    {{ darkMode ? 'dark_mode' : 'light_mode' }}
-  </i>
 </header>

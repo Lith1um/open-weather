@@ -43,11 +43,7 @@ a {
 }
 
 // small screen
-@media (min-width: 576px) {
-  .container {
-    --container-side-padding: 16px;
-  }
-}
+@media (min-width: 576px) {}
 
 // medium screen
 @media (min-width: 768px) {
