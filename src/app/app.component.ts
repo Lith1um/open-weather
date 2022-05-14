@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 
 import { LocalStorageService } from '@core/services';
+import { ForecastService } from '@forecast/services';
 
 @Component({
   selector: 'app-root',

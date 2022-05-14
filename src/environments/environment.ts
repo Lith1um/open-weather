@@ -1,8 +1,9 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { EnvironmentModel } from '@core/models';
 
-export const environment = {
+export const environment: EnvironmentModel = {
+
   production: false,
-  openWeatherApiKey: 'be50dec5f74178aee29ce29319d0fef1'
+  openWeatherApiKey: 'be50dec5f74178aee29ce29319d0fef1',
+  openWeatherApiUrl: 'https://api.openweathermap.org/data/2.5'
+
 };

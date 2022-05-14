@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  margin-top: 40px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 0.75rem;
+    border-top: 2px solid var(--primary-border-color);
+
+    &-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      > img {
+        height: 24px;
+      }
+
+      > span {
+        color: var(--secondary-text-color);
+      }
+    }
+  }
+}
