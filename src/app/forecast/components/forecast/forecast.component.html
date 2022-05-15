@@ -2,30 +2,34 @@
   <ow-error-message *ngIf="error" [errorMessage]="error.message">
   </ow-error-message>
 
-  <ng-container *ngIf="currentForecast && currentHourForecast">
-    <img
-      class="forecast__img"
-      src="https://openweathermap.org/img/wn/{{currentForecast.weather[0].icon}}@4x.png"
-      [alt]="currentForecast.weather[0].main"/>
+  <ow-spinner *ngIf="loading; else forecast" class="forecast__loading" [diameter]="30"></ow-spinner>
 
-    <div class="forecast__info">
-      <h3 class="forecast__title">{{ locationName }}</h3>
+  <ng-template #forecast>
+    <ng-container *ngIf="currentForecast && currentHourForecast">
+      <img
+        class="forecast__img"
+        src="https://openweathermap.org/img/wn/{{currentForecast.weather[0].icon}}@4x.png"
+        [alt]="currentForecast.weather[0].main"/>
   
-      <div class="forecast__data">
-        <span>Temperature:</span>
-        <span>{{ currentForecast.temp | round }}°C</span>
+      <div class="forecast__info">
+        <h3 class="forecast__title">{{ locationName }}</h3>
+    
+        <div class="forecast__data">
+          <span>Temperature:</span>
+          <span>{{ currentForecast.temp | round }}°C</span>
+        </div>
+    
+        <div class="forecast__data">
+          <span>Humidity:</span>
+          <span>{{ currentForecast.humidity }}%</span>
+        </div>
+    
+        <div class="forecast__data">
+          <span>Chance of rain:</span>
+          <span>{{ currentHourForecast.pop * 100 | round }}%</span>
+        </div>
       </div>
-  
-      <div class="forecast__data">
-        <span>Humidity:</span>
-        <span>{{ currentForecast.humidity }}%</span>
-      </div>
-  
-      <div class="forecast__data">
-        <span>Chance of rain:</span>
-        <span>{{ currentHourForecast.pop * 100 | round }}%</span>
-      </div>
-    </div>
-  </ng-container>
+    </ng-container>
+  </ng-template>
 
 </div>

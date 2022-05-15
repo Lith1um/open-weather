@@ -1,5 +1,6 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { ErrorModel } from '@shared/models';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 
 export class ApiService {
 
@@ -21,8 +22,17 @@ export class ApiService {
           ? `${this.baseUrl}/${path}?${query}`
           : `${this.baseUrl}/${path}`
         console.log(`GET: ${requestUrl}`);
-      })
+      }),
+      catchError(this.handleError)
     );
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<ErrorModel> {
+    console.log(error);
+    return throwError(() => ({
+      status: error.error.cod,
+      message: error.error.message
+    }));
   }
   
 }

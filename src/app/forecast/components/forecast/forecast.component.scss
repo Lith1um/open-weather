@@ -22,6 +22,7 @@
 }
 
 .forecast {
+  width: calc(100% - 36px);
   border: 2px solid var(--primary-border-color);
   border-radius: 8px;
   padding: 16px;
@@ -30,6 +31,10 @@
   flex-wrap: var(--forecast-flex-wrap);
   align-items: var(--forecast-align-items);
   gap: var(--forecast-gap);
+
+  &__loading {
+    margin: 0 auto;
+  }
 
   &__img {
     flex-grow: var(--img-flex-grow);

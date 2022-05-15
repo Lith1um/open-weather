@@ -3,7 +3,7 @@ import { CurrentForecastModel, ForecastModel, HourlyForecastModel, LocationModel
 import { ForecastService } from '@forecast/services';
 import { GeoLocationService } from '@forecast/services/geo-location.service';
 import { ErrorModel } from '@shared/models';
-import { EMPTY, switchMap } from 'rxjs';
+import { EMPTY, finalize, switchMap } from 'rxjs';
 
 @Component({
   selector: 'ow-forecast',
@@ -22,6 +22,8 @@ export class ForecastComponent implements OnChanges {
 
   currentHourForecast: HourlyForecastModel;
 
+  loading = true;
+
   error: ErrorModel;
 
   constructor(
@@ -35,6 +37,8 @@ export class ForecastComponent implements OnChanges {
   }
 
   getForecast(): void {
+    this.loading = true;
+
     this.geoLocationService.getLocation(this.location).pipe(
       switchMap((location: LocationModel | undefined) => {
         if (!location) {
@@ -42,11 +46,16 @@ export class ForecastComponent implements OnChanges {
         }
         this.locationName = location.name;
         return this.forecastService.getForecast(location.lon, location.lat);
-      })
+      }),
+      finalize(() => setTimeout(() => this.loading = false, 500))
     ).subscribe({
       next: (forecast) => {
         this.currentForecast = forecast.current;
         this.currentHourForecast = forecast.hourly[0];
+      },
+      error: (error: ErrorModel) => {
+        console.log(error);
+        this.error = error;
       }
     });
   }
