@@ -4,7 +4,6 @@
   --forecast-align-items: stretch;
   --img-flex-grow: 1;
   --title-text-align: center;
-  --info-margin-top: -20px;
   --info-padding: 24px;
 }
 
@@ -16,7 +15,6 @@
     --forecast-align-items: center;
     --img-flex-grow: 0;
     --title-text-align: left;
-    --info-margin-top: 0;
     --info-padding: 0;
   }
 }
@@ -33,6 +31,7 @@
 
   &__loading {
     margin: 0 auto;
+    padding: 24px 0;
   }
 
   &__img {
@@ -42,7 +41,6 @@
   }
 
   &__info {
-    margin-top: var(--info-margin-top);
     flex: 1;
     padding-right: 24px;
     padding-left: var(--info-padding);
