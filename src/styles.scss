@@ -18,22 +18,23 @@ body {
   --primary-text-color: #24292f;
   --secondary-text-color: #b4b4b4;
   --link-color: blue;
-  --bg-color: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
   --primary-border-color: #d8dee4;
 
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: var(--bg-primary);
 }
 
 body.dark-mode {
   --text-color: #c9d1d9;
   --link-color: #ffffff;
-  --bg-color: #0D1117;
+  --bg-primary: #0D1117;
+  --bg-secondary: #24292F;
 }
 
 p {
   margin-top: 0;
-  text-align: justify;
 }
 
 a {

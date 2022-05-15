@@ -4,7 +4,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { LocalStorageService } from '@core/services';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ow-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
