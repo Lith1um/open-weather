@@ -1,2 +1,6 @@
-<ow-error-message *ngIf="error" [errorMessage]="error">
-</ow-error-message>
+<div class="forecast-grid">
+  <ow-forecast
+    *ngFor="let location of locations"
+    [location]="location">
+  </ow-forecast>
+</div>

@@ -3,17 +3,17 @@ import { ForecastService } from '@forecast/services';
 
 @Component({
   selector: 'ow-forecast-grid',
-  templateUrl: './forecast-grid.component.html'
+  templateUrl: './forecast-grid.component.html',
+  styleUrls: ['./forecast-grid.component.scss']
 })
-export class ForecastGridComponent implements OnInit {
+export class ForecastGridComponent {
 
-  error: string;
-
-  constructor(private forecastService: ForecastService) {}
-
-  ngOnInit(): void {
-    this.forecastService.getForecast('London', 'GB')
-      .subscribe((forecast) => console.log(forecast));
-  }
+  locations: string[] = [
+    'London,GB',
+    'Paris,FR',
+    'New York,NY,US',
+    'Los Angeles,CA,US',
+    'Tokyo,JP'
+  ];
 
 }

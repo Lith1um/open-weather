@@ -1,36 +1,37 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EnvironmentService } from '@core/services';
 import { Observable } from 'rxjs';
+import { EnvironmentService } from '@core/services';
+import { ApiService } from '@shared/services';
+import { ForecastModel } from '@forecast/models';
 
 @Injectable()
-export class ForecastService {
-
-  private apiUrl: string;
-
-  private apiKey: string;
+export class ForecastService extends ApiService {
 
   constructor(
-    private http: HttpClient,
+    http: HttpClient,
     private environmentService: EnvironmentService
   ) {
-    this.apiUrl = this.environmentService.getOpenWeatherApiUrl();
-    this.apiKey = this.environmentService.getOpenWeatherApiKey();
+    super(
+      http,
+      environmentService.getOpenWeatherDataApiUrl(),
+      environmentService.getOpenWeatherApiKey()
+    );
   }
 
-  getForecast(city: string, countryCode: string): Observable<any> {
+  getForecast(
+    lon: number,
+    lat: number,
+    units: string = 'metric',
+    exclude: string = 'minutely,daily,alerts'
+  ): Observable<ForecastModel> {
     let query = new HttpParams();
-    query = query.append('q', `${city},${countryCode}`);
-    query = query.append('units', 'metric');
+    query = query.append('lon', lon);
+    query = query.append('lat', lat);
+    query = query.append('units', units);
+    query = query.append('exclude', exclude);
 
-    return this.get('weather', query);
-  }
-
-  private get(path: string, params: HttpParams): Observable<any> {
-    // append the api key
-    params = params.append('appid', this.apiKey);
-
-    return this.http.get(`${this.apiUrl}/${path}`, { params });
+    return this.get('onecall', query);
   }
   
 }

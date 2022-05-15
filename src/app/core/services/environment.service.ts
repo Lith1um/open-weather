@@ -13,8 +13,12 @@ export class EnvironmentService {
     return this.environment.openWeatherApiKey;
   }
 
-  public getOpenWeatherApiUrl(): string {
-    return this.environment.openWeatherApiUrl;
+  public getOpenWeatherDataApiUrl(): string {
+    return this.environment.openWeatherDataApiUrl;
+  }
+
+  public getOpenWeatherGeoApiUrl(): string {
+    return this.environment.openWeatherGeoApiUrl;
   }
   
 }
