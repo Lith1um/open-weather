@@ -1,16 +1,15 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { CurrentForecastModel, ForecastModel, HourlyForecastModel, LocationModel } from '@forecast/models';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { CurrentForecastModel, HourlyForecastModel, LocationModel } from '@forecast/models';
 import { ForecastService } from '@forecast/services';
 import { GeoLocationService } from '@forecast/services/geo-location.service';
 import { ErrorModel } from '@shared/models';
-import { EMPTY, finalize, switchMap, throwError } from 'rxjs';
+import { finalize, switchMap, throwError } from 'rxjs';
 
 @Component({
   selector: 'ow-forecast',
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.scss']
 })
-// TODO: add loading indicator
 export class ForecastComponent implements OnChanges {
 
   @Input()
