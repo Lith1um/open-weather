@@ -1,7 +1,7 @@
 export interface CurrentForecastModel {
 
-  temp: string;
-  humidity: string;
+  temp: number;
+  humidity: number;
   weather: {
     main: string;
     icon: string;

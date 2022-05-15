@@ -1,5 +1,5 @@
 <div class="forecast">
-  <ow-error-message *ngIf="error" [errorMessage]="error.message">
+  <ow-error-message *ngIf="!loading && error" [errorMessage]="error.message">
   </ow-error-message>
 
   <ow-spinner *ngIf="loading; else forecast" class="forecast__loading" [diameter]="30"></ow-spinner>

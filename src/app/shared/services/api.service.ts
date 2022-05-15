@@ -28,11 +28,16 @@ export class ApiService {
   }
 
   private handleError(error: HttpErrorResponse): Observable<ErrorModel> {
-    console.log(error);
-    return throwError(() => ({
-      status: error.error.cod,
-      message: error.error.message
-    }));
+    return throwError(() => {
+      if (error.error) {
+        return {
+          status: error.error.cod,
+          message: error.error.message
+        }
+      } else {
+        return error;
+      }
+    });
   }
   
 }

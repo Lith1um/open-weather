@@ -14,6 +14,4 @@ export class ToolbarComponent {
   @Output()
   darkModeToggled = new EventEmitter<void>();
 
-  title = 'OpenWeather';
-
 }

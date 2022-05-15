@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class EnvironmentService {
   
-  private environment: EnvironmentModel = environment;
+  public environment: EnvironmentModel = environment;
 
   public getOpenWeatherApiKey(): string {
     return this.environment.openWeatherApiKey;

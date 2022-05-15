@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ForecastService } from '@forecast/services';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ow-forecast-grid',
