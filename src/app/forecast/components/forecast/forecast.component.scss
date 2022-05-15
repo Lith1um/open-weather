@@ -1,11 +1,11 @@
 .forecast {
   --forecast-direction: column;
   --forecast-flex-wrap: wrap;
-  --forecast-gap: 0;
   --forecast-align-items: stretch;
   --img-flex-grow: 1;
   --title-text-align: center;
   --info-margin-top: -20px;
+  --info-padding: 24px;
 }
 
 // small screen
@@ -13,25 +13,23 @@
   .forecast {
     --forecast-direction: row;
     --forecast-flex-wrap: nowrap;
-    --forecast-gap: 16px;
     --forecast-align-items: center;
     --img-flex-grow: 0;
     --title-text-align: left;
     --info-margin-top: 0;
+    --info-padding: 0;
   }
 }
 
 .forecast {
-  width: calc(100% - 36px);
+  width: calc(100% - 4px);
   border: 2px solid var(--primary-border-color);
   border-radius: 8px;
-  padding: 16px;
   background-color: var(--bg-secondary);
   display: flex;
   flex-direction: var(--forecast-direction);
   flex-wrap: var(--forecast-flex-wrap);
   align-items: var(--forecast-align-items);
-  gap: var(--forecast-gap);
 
   &__loading {
     margin: 0 auto;
@@ -46,14 +44,19 @@
   &__info {
     margin-top: var(--info-margin-top);
     flex: 1;
+    padding-right: 24px;
+    padding-left: var(--info-padding);
+    padding-bottom: var(--info-padding);
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 
   &__title {
+    font-size: 1.25rem;
     text-align: var(--title-text-align);
     margin-top: 0;
+    margin-bottom: 16px;
   }
 
   &__data {
